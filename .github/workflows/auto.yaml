@@ -34,8 +34,8 @@ jobs:
       - name: Get Alpine version
         id: latest_versions
         run: |
-          ALPINE_DIGEST=$(crane digest alpine:latest)
-          echo "alpine=$ALPINE_DIGEST" >> $GITHUB_ENV
+          ALPINE_VERSION=$(crane export alpine:latest - | tar -xO etc/alpine-release)
+          echo "alpine=$ALPINE_VERSION" >> $GITHUB_ENV
       
       - name: Compare with VERSIONS
         id: check_versions
