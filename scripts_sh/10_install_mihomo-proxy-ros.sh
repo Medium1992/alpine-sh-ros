@@ -2,7 +2,7 @@
 set -e
 
 BIN="/usr/local/bin/mihomo"
-TMP="/tmp/mihomo.$$"
+TMP="/dev/shm/mihomo.$$"
 
 mkdir -p "$TMP"
 
