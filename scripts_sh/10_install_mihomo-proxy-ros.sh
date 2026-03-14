@@ -61,7 +61,7 @@ case "$ARCH" in
         ;;
 esac
 
-URL="https://github.com/MetaCubeX/mihomo/releases/download/${LATEST}/${FILE}"
+URL="https://github.com/medium1992/mihomo-proxy-ros/releases/download/${LATEST}/${FILE}"
 
 echo "Downloading $URL"
 
