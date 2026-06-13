@@ -13,14 +13,10 @@ RUN if [ "$TARGETARCH" = "arm64" ] || [ "$TARGETARCH" = "amd64" ]; then \
     ln -s /usr/sbin/iptables-legacy-restore /usr/sbin/iptables-restore;
 CMD ["/bin/sh", "-c", "\
 if [ -d /scripts_sh ] && [ \"$(ls -A /scripts_sh 2>/dev/null)\" ]; then \
-    for script in /scripts_sh/*; do \
+    for script in /scripts_sh/*.sh; do \
         [ -f \"$script\" ] || continue; \
         echo \"Running $script\"; \
-        if [ -x \"$script\" ]; then \
-            \"$script\"; \
-        else \
-            /bin/sh \"$script\"; \
-        fi; \
+        /bin/sh \"$script\"; \
     done; \
 else \
     echo \"No scripts found in /scripts_sh/\"; \
